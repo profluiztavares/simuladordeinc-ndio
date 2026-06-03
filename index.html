@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroFogo Zero - Simulador de Prevenção a Incêndios Rurais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header>
+        <h1>AgroFogo Zero</h1>
+        <p>Simulador Interativo de Prevenção a Incêndios Rurais — Concurso Agrinho 2026</p>
+    </header>
+
+    <main>
+        
+        <section id="formulario-simulador">
+            <h2>Diagnóstico de Risco da Propriedade</h2>
+            <p>Preencha as informações abaixo para gerar o seu plano de ação preventivo.</p>
+            
+            <form id="form-incendio" onsubmit="return false;">
+                
+                <article class="campo-grupo">
+                    <label for="input-umidade">Umidade Relativa do Ar Atual (%):</label>
+                    <input type="number" id="input-umidade" placeholder="Ex: 25" required>
+                </article>
+
+                <article class="campo-grupo">
+                    <label for="select-palhada">Presença de Palhada (Cobertura Vegetal Seca):</label>
+                    <select id="select-palhada" required>
+                        <option value="">Selecione uma opção...</option>
+                        <option value="alta">Sim, em grande parte da propriedade (Alto Risco)</option>
+                        <option value="moderada">Sim, mas controlada ou fragmentada</option>
+                        <option value="baixa">Não, solo preparado ou sem cobertura seca</option>
+                    </select>
+                </article>
+
+                <article class="campo-grupo">
+                    <label for="select-rodovia">Proximidade com Rodovias ou Faixas de Domínio:</label>
+                    <select id="select-rodovia" required>
+                        <option value="">Selecione uma opção...</option>
+                        <option value="perto">Muito próxima (Menos de 500 metros)</option>
+                        <option value="afastada">Distância segura (Mais de 500 metros)</option>
+                    </select>
+                </article>
+
+                <fieldset class="campo-grupo">
+                    <legend>Recursos e Infraestrutura de Combate Disponíveis:</legend>
+                    
+                    <label>
+                        <input type="checkbox" id="check-tanque" value="tanque"> Tanque de água / Caminhão pipa disponível
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" id="check-trator" value="trator"> Trator com grade pronto para criar aceiros
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" id="check-epi" value="epi"> Equipe com EPIs e abafadores manuais
+                    </label>
+                </fieldset>
+
+                <button type="submit" id="btn-calcular">Analisar Riscos e Gerar Plano</button>
+
+            </form>
+        </section>
+
+        <section id="feedback-erro" aria-live="assertive" hidden>
+            </section>
+
+        <section id="resultado-painel" hidden>
+            <h2>Resultado da Análise</h2>
+            <article id="status-risco">
+                </article>
+            
+            <article id="plano-acao">
+                <h3>Plano de Ação Preventivo Recomendado:</h3>
+                <div id="diretrizes-plano">
+                    </div>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AgroFogo Zero. Desenvolvido para o Concurso Agrinho - Ensino Médio (Rede Estadual de Ensino do Paraná).</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
