@@ -1,1 +1,196 @@
+/* ==========================================================================
+   1. VARIÁVEIS DE AMBIENTE (:root) E PALETA DE CORES AGRO/SUSTENTABILIDADE
+   ========================================================================== */
+:root {
+    /* Cores Principais (Alto Contraste e Temática Agro/Alerta) */
+    --cor-primaria-verde: #1b4d3e;   /* Verde floresta profundo (Sustentabilidade/Agro) */
+    --cor-secundaria-laranja: #e65c00; /* Laranja/Coral vibrante (Alerta/Fogo/Ação) */
+    --cor-fundo-claro: #f4f7f5;       /* Cinza esverdeado bem claro (Conforto visual de fundo) */
+    --cor-card-fundo: #ffffff;        /* Branco puro para blocos de conteúdo */
+    
+    /* Cores de Texto e Feedback */
+    --cor-texto-escuro: #2c3e50;      /* Cinza escuro azulado para máxima legibilidade */
+    --cor-texto-mutado: #5a6b7c;      /* Texto secundário */
+    --cor-erro-fundo: #fdf0ed;         /* Fundo suave para caixas de erro */
+    --cor-erro-texto: #c0392b;         /* Vermelho escuro para alertas de validação */
 
+    /* Configurações de Layout */
+    --borda-raio: 8px;
+    --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --sombra-foco: 0 0 0 3px rgba(230, 92, 0, 0.3);
+    --transicao-padrao: all 0.3s ease;
+}
+
+/* ==========================================================================
+   2. RESET GLOBAL
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   3. ESTILIZAÇÃO DAESTRUTURA BASE
+   ========================================================================== */
+body {
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cor-primaria-verde);
+    color: #ffffff;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    font-size: 1rem;
+    color: #a3e2c9;
+    font-weight: 300;
+}
+
+/* Área de Conteúdo Principal */
+main {
+    flex: 1;
+    max-width: 800px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Espaçamento confortável entre seções */
+}
+
+/* Estilo Base para as Seções/Cards */
+section {
+    background-color: var(--cor-card-fundo);
+    padding: 2rem;
+    border-radius: var(--borda-raio);
+    box-shadow: var(--sombra-suave);
+}
+
+section h2 {
+    color: var(--cor-primaria-verde);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eef2f0;
+    padding-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   4. FORMULÁRIO E INPUTS INTERATIVOS (UI/UX)
+   ========================================================================== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: none;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--cor-texto-escuro);
+}
+
+/* Estilização de Inputs e Selects */
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    color: var(--cor-texto-escuro);
+    background-color: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: var(--borda-raio);
+    transition: var(--transicao-padrao);
+    outline: none;
+}
+
+input[type="number"]:focus,
+select:focus {
+    border-color: var(--cor-secundaria-laranja);
+    box-shadow: var(--sombra-foco);
+}
+
+/* Estilização do Grupo de Checkboxes (Fieldset e Labels internos) */
+fieldset.campo-grupo legend {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 0.5rem;
+}
+
+fieldset.campo-grupo label {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.4rem 0;
+    transition: var(--transicao-padrao);
+}
+
+fieldset.campo-grupo input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--cor-primaria-verde); /* Cor temática para o check */
+    cursor: pointer;
+}
+
+/* Botão de Ação Principal */
+button {
+    background-color: var(--cor-secundaria-laranja);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    padding: 1rem;
+    border-radius: var(--borda-raio);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+    box-shadow: 0 4px 6px rgba(230, 92, 0, 0.2);
+    margin-top: 0.5rem;
+}
+
+button:hover {
+    background-color: #cc5200;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(230, 92, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   5. COMPONENTES DINÂMICOS (ALERTA DE ERRO E RESULTADOS)
+   ========================================================================== */
+
+/* Painel de Feedback de Erro Amigável na Tela */
+#feedback-erro {
+    background-color: var(--cor-
